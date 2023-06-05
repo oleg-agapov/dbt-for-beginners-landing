@@ -1,0 +1,98 @@
+---
+---
+
+
+<section>
+    <div class="max-w-7xl mx-auto px-8 md:px-12 lg:px-24 py-16 md:py-24 1bg-slate-100 flex flex-col md:flex-row">
+        <div class="flex-1">
+            <div class="my-4 md:my-8"></div>
+            <div class="inline-block rounded-full bg-indigo-600 text-white text-xs p-1 px-3">
+                Coming soon
+            </div>
+            <div class="my-12"></div>
+            <div class="text-black font-extrabold text-5xl lg:text-6xl tracking-tight">
+                dbt for beginners
+            </div>
+            <div class="my-8 md:my-16"></div>
+            <div class="text-slate-500 lg:text-xl max-w-2xl mt-4 text-base">
+                Learn how world-class data teams use dbt to build reliable, maintainable, and scalable data models.
+            </div>
+            <div class="my-8 md:my-16"></div>
+            <form class="flex flex-col md:flex-row" x-data="contactForm()" @submit.prevent="submit">
+                <input class="
+                    w-full leading-tight p-4 rounded-full pl-6 
+                    border-2 border-indigo-200
+                    md:rounded-none md:rounded-l-full md:border-t-2 md:border-b-2 md:border-l-2 md:rounded-r-none md:border-r-0"
+                    placeholder="your@email.com" type="email" x-model="data.email" required/>
+                
+                <button type="submit" :disabled="loading" x-text="buttonText" class="
+                    mt-4 md:mt-0
+                    w-full md:w-56 leading-tight p-5 md:p-4 pl-6 w-
+                    rounded-full text-white uppercase text-xs
+                    bg-indigo-600 hover:bg-indigo-500
+                    md:rounded-none md:rounded-r-full md:border-t md:border-b md:border-r
+                    ">
+                    Join waitlist
+                </button>
+            </form>
+        </div>
+        <div class="flex-1 mt-16 md:mt-0">
+            <img src="/laptop-gray.png" alt="laptop picture" class="md:px-16">
+            <div class="flex md:mt-2 md:px-16">
+                <div class="flex-1">
+                    <p class="font-semibold text-center text-3xl md:text-4xl">5</p>
+                    <p class="text-center text-slate-500">modules</p>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-center text-3xl md:text-4xl">35</p>
+                    <p class="text-center text-slate-500">lessons</p>
+                </div>
+                <div class="flex-1">
+                    <p class="font-semibold text-center text-3xl md:text-4xl">10</p>
+                    <p class="text-center text-slate-500">exercises</p>
+                </div>
+            </div>
+            <div class="mt-8 md:px-16">
+                <svg aria-hidden="true" viewBox="0 0 418 42" class="h-4 w-full px-8 fill-indigo-500"
+                preserveAspectRatio="none"><path d="M203.371.916c-26.013-2.078-76.686 1.963-124.73 9.946L67.3 12.749C35.421 18.062 18.2 21.766 6.004 25.934 1.244 27.561.828 27.778.874 28.61c.07 1.214.828 1.121 9.595-1.176 9.072-2.377 17.15-3.92 39.246-7.496C123.565 7.986 157.869 4.492 195.942 5.046c7.461.108 19.25 1.696 19.17 2.582-.107 1.183-7.874 4.31-25.75 10.366-21.992 7.45-35.43 12.534-36.701 13.884-2.173 2.308-.202 4.407 4.442 4.734 2.654.187 3.263.157 15.593-.78 35.401-2.686 57.944-3.488 88.365-3.143 46.327.526 75.721 2.23 130.788 7.584 19.787 1.924 20.814 1.98 24.557 1.332l.066-.011c1.201-.203 1.53-1.825.399-2.335-2.911-1.31-4.893-1.604-22.048-3.261-57.509-5.556-87.871-7.36-132.059-7.842-23.239-.254-33.617-.116-50.627.674-11.629.54-42.371 2.494-46.696 2.967-2.359.259 8.133-3.625 26.504-9.81 23.239-7.825 27.934-10.149 28.304-14.005.417-4.348-3.529-6-16.878-7.066Z"></path></svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    const FORMSPARK_ACTION_URL = "https://submit-form.com/7E5wYDUL";
+
+function contactForm() {
+  return {
+    data: {
+      email: "",
+    },
+    buttonText: "Join waitlist",
+    loading: false,
+    submit() {
+      this.buttonText = "Submitting...";
+      this.loading = true;
+      fetch(FORMSPARK_ACTION_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(this.data),
+      })
+        .then(() => {
+          alert("Form submitted");
+        })
+        .catch(() => {
+          alert("Something went wrong");
+        })
+        .finally(() => {
+          this.data.message = "";
+          this.buttonText = "Done!";
+          // this.loading = false;
+        });
+    },
+  };
+}
+</script>
