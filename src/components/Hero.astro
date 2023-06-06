@@ -29,7 +29,7 @@
                     mt-4 md:mt-0
                     w-full md:w-56 leading-tight p-5 md:p-4 pl-6 w-
                     rounded-full text-white uppercase text-xs
-                    bg-indigo-600 hover:bg-indigo-500
+                    bg-indigo-600 hover:bg-indigo-500 disabled:bg-gray-500
                     md:rounded-none md:rounded-r-full md:border-t md:border-b md:border-r
                     ">
                     Join waitlist
@@ -66,10 +66,16 @@
 function contactForm() {
   return {
     data: {
-      email: "",
+      email: localStorage.getItem('email') || "",
     },
     buttonText: "Join waitlist",
     loading: false,
+    init() {
+      if (this.data.email) {
+        this.buttonText = "Joined!";
+        this.loading = true;
+      }
+    },
     submit() {
       this.buttonText = "Submitting...";
       this.loading = true;
@@ -82,15 +88,12 @@ function contactForm() {
         body: JSON.stringify(this.data),
       })
         .then(() => {
-          alert("Form submitted");
+          localStorage.setItem('email', this.data.email)
         })
-        .catch(() => {
-          alert("Something went wrong");
-        })
+        .catch(() => {})
         .finally(() => {
           this.data.message = "";
           this.buttonText = "Done!";
-          // this.loading = false;
         });
     },
   };
