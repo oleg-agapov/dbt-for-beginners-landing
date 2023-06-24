@@ -1,5 +1,11 @@
 ---
 import ScreenSize from "./ScreenSize.astro";
+
+let visibility = false
+
+if (`${import.meta.env.MODE}` === "development") {
+    visibility = true
+}
 ---
 
 <header>
@@ -8,7 +14,7 @@ import ScreenSize from "./ScreenSize.astro";
             <h1 class="text-sm tracking-wide">
                 dbt for beginners
             </h1>
-            <ScreenSize />
+            {visibility && <ScreenSize />}
         </div>
     </div>
 </header>
