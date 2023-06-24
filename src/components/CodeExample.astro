@@ -21,8 +21,8 @@ where created_at > (
 {% endif %}`
 ---
 
-<section class="flex shadow select-none text-sm">
-    <div class="flex-1 rounded-lg bg-slate-800 text-gray-200 overflow-hidden">
+<section class="flex rounded-md shadow-lg shadow-gray-900 select-none text-sm overflow-hidden">
+    <div class="flex-1 bg-slate-800 text-gray-200">
         <div>
             <div id="code-header" class="flex items-center justify-between p-2 px-4 bg-slate-900">
                 <div class="flex-1 flex">
@@ -30,7 +30,10 @@ where created_at > (
                     <div class="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
                     <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
                 </div>
-                <div class="flex-1 text-center">dim_users.sql</div>
+                <div class="flex-1 text-center flex items-center">
+                  <img src="/dbt-logo.svg" class="h-4 w-4 mr-2">
+                  dim_users.sql
+                </div>
                 <div class="flex-1"></div>
             </div>
             <div class="font-mono select-text text-xs">
