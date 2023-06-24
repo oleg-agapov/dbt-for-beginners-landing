@@ -1,0 +1,43 @@
+---
+const code = `{{
+  config(
+    materialized='incremental',
+    unque_key=['user_id'],
+    on_schema_change='append_new_columns',
+    full_refresh=false
+  ) 
+}}
+
+select
+  id as user_id,
+  email,
+  created_at
+from {{ ref('stg__users') }}
+{% if is_incremental() %}
+where created_at > (
+  select max(created_at)
+  from {{ this }}
+)
+{% endif %}`
+---
+
+<section class="flex shadow select-none text-sm">
+    <div class="flex-1 rounded-lg bg-slate-800 text-gray-200 overflow-hidden">
+        <div>
+            <div id="code-header" class="flex items-center justify-between p-2 px-4 bg-slate-900">
+                <div class="flex-1 flex">
+                    <div class="h-3 w-3 rounded-full bg-red-500 mr-2"></div>
+                    <div class="h-3 w-3 rounded-full bg-yellow-500 mr-2"></div>
+                    <div class="h-3 w-3 rounded-full bg-green-500 mr-2"></div>
+                </div>
+                <div class="flex-1 text-center">dim_users.sql</div>
+                <div class="flex-1"></div>
+            </div>
+            <div class="font-mono select-text text-xs">
+                <pre><code class="language-sql" style="padding-left: 1.5rem; padding-right: 1.5rem;">{code}</code></pre>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js" is:inline></script>
+                <script is:inline>hljs.highlightAll();</script>
+            </div>
+        </div>
+    </div>
+</section>

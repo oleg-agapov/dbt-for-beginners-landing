@@ -1,5 +1,6 @@
 ---
 import Header from "../components/Header.astro";
+import CodeExample from "../components/CodeExample.astro";
 
 const courseContent = [
   { name: "Modules", count: 5 },
@@ -51,7 +52,10 @@ const courseContent = [
       </div>
     </div>
     <div class="flex-1 flex items-center">
-      <img src="/images/code.png" alt="data pipeline picture" class="hidden lg:block md:px-8">
+      <!-- <img src="/images/code.png" alt="data pipeline picture" class="hidden lg:block md:px-8"> -->
+      <div class="hidden w-full lg:block md:px-16">
+        <CodeExample />
+      </div>
     </div>
   </div>
 </section>
