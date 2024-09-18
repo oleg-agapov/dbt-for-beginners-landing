@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/basic/Header.astro";
+
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<AstroSeo
+  title="dbt for beginners"
+  description='Online course "dbt for beginners"'
+  canonical="https://dbtforbeginners.com"
+/>
+
+<script>
+import Reveal from "reveal.js";
+import Markdown from 'reveal.js/plugin/markdown/markdown.esm.js';
+
+let deck = new Reveal({
+    // Display presentation control arrows
+    controls: true,
+
+    // Help the user learn the controls by providing hints, for example by
+    // bouncing the down arrow when they first encounter a vertical slide
+    controlsTutorial: true,
+
+    // Determines where controls appear, "edges" or "bottom-right"
+    controlsLayout: 'bottom-right',
+
+    // Visibility rule for backwards navigation arrows; "faded", "hidden"
+    // or "visible"
+    controlsBackArrows: 'faded',
+
+    // Display a presentation progress bar
+    progress: true,
+  //  plugins: [ Markdown ],
+})
+deck.initialize();
+</script>
+
+<BaseLayout>
+  <Header />
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h1>
+          Slide 1
+        </h1>
+      </section>
+      <section>Slide 2</section>
+    </div>
+  </div>
+  <link is:client rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/reveal.min.css" integrity="sha512-V5fKCVKOFy36w8zJmLzPH5R6zU6KvuHOvxfMRczx2ZeqTjKRGSBO9yiZjCKEJS3n6EmENwrH/xvSwXqxje+VVA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <link is:client rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/css/theme/black.min.css" integrity="sha512-5w6AICFraU3+mkD1dTmad4vXyyJ1nZM/KA2TG8oQ5yiyTYAXssxPk930O1upFxeC7ml4CxyXC1QBzthu26ZxZg==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+  
+</BaseLayout>

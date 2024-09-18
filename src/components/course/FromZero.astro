@@ -1,0 +1,37 @@
+---
+const features = [
+    {
+        title: 'Lessons',
+        description: 'Learn best practices on how to build scalable, modular, documented and reliable data pipelines'
+    },
+    {
+        title: 'Exercises',
+        description: 'A lot of practice to help you better understand how things work and what are the possibilities'
+    },
+    {
+        title: 'Community',
+        description: 'You are not alone on your way, our community of learners is live and ready to help'
+    },
+]
+---
+
+<section class="max-w-6xl mx-auto px-8 md:px-16">
+    <div class="my-24 flex justify-center">
+        <h1 class="text-3xl relative">
+            <span class="absolute w-16 h-16 bg-blue-200 -z-10 rounded-full -top-3 -left-6"></span>
+            From zero to hero 🚀
+        </h1>
+    </div>
+    <div class="my-32">
+        <div class="flex flex-col items-center">
+            {features.map((data) =>
+            <div class="flex px-64 mb-8">
+                <div class="w-32 border-4 border-gray-700 flex items-center justify-center rounded relative">
+                    {data.title}
+                    <div class="absolute bg-yellow-300 rounded -z-10 left-1 top-1 -right-2 -bottom-2"></div>
+                </div>
+                <div class="pl-8 flex-1">{data.description}</div>
+            </div>)}
+        </div>
+    </div>
+</section>

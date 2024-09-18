@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/course/Hero.astro";
+import AboutCourse from "../components/course/AboutCourse.astro";
+import FromZero from "../components/course/FromZero.astro";
+import Journey from "../components/course/Journey.astro";
+
+import { AstroSeo } from "@astrolib/seo";
+---
+
+<AstroSeo
+  title="dbt for beginners"
+  description='Online course "dbt for beginners"'
+  canonical="https://dbtforbeginners.com"
+/>
+
+<BaseLayout>
+  <!-- <Header /> -->
+  <Hero />
+  <AboutCourse />
+  <FromZero />
+  <Journey />
+</BaseLayout>

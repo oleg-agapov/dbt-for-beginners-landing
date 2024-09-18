@@ -1,18 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
+import HeroCoaching from "../components/coaching/HeroCoaching.astro";
+import AboutCoaching from "../components/coaching/AboutCoaching.astro";
+import FromZeroCoaching from "../components/coaching/FromZeroCoaching.astro";
+import CoachingProgram from "../components/coaching/CoachingProgram.astro";
 
 import { AstroSeo } from "@astrolib/seo";
 ---
 
 <AstroSeo
-  title="dbt for beginners"
-  description='Online course "dbt for beginners"'
+  title="dbt coaching for beginners"
+  description='dbt coaching for beginners'
   canonical="https://dbtforbeginners.com"
 />
 
 <BaseLayout>
-  <!-- <Header /> -->
-  <Hero />
+  <HeroCoaching />
+  <AboutCoaching />
+  <FromZeroCoaching />
+  <CoachingProgram />
+  
 </BaseLayout>
