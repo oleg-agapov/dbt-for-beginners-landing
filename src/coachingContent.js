@@ -1,7 +1,14 @@
 
 export const coachingModules = [
     {
-        name: 'First steps in dbt',
+        name: 'Foundations of dbt',
+        lessons: [
+            {title: 'What is dbt?'},
+            {title: 'Why dbt exists and where does it fit?'},
+            {title: 'What dbt can do for you'},
+            {title: 'Installing dbt'},
+            {title: 'Bootstrapping the project'},
+        ],
         theory: [
             'learn about “dbt approach”',
             'difference between ETL and ETL',
@@ -13,16 +20,9 @@ export const coachingModules = [
             'create your first dbt project',
             'run your first dbt command',
         ],
-        lessons: [
-            {title: 'What is dbt?'},
-            {title: 'Why dbt exists and where does it fit?'},
-            {title: 'What dbt can do for you'},
-            {title: 'Installing dbt'},
-            {title: 'Bootstrapping the project'},
-        ]
     },
     {
-        name: 'Basics of data modeling',
+        name: 'Testing and documentation',
         lessons: [
             {title: 'dbt key components'},
             {title: 'dbt models'},
@@ -36,19 +36,19 @@ export const coachingModules = [
             {title: 'Configuring your project'},
         ],
         theory: [
-            'main building blocks of dbt',
-            'dbt commands and their usage',
-            'Jinja templating',
-            'sources and seeds',
+            'types of tests in dbt',
+            'test configuration',
+            'dbt documentation',
+            'docs customizations',
         ],
         practice: [
-            'create dbt sources and seeds',
-            'run your first dbt models',
-            'practice dbt commands',
+            'create dbt tests',
+            'add documentation to models',
+            'dbt docs',
         ],
     },
     {
-        name: 'Data modeling best practices',
+        name: 'Best practices and advanced features',
         lessons: [
             {title: 'Best practices'},
             {title: 'Clean DAG'},
@@ -61,11 +61,13 @@ export const coachingModules = [
         theory: [
             'best practices of data modeling',
             'modeling layers',
-            'naming conventions',
+            'macros and packages',
+            'materializations',
         ],
         practice: [
-            'refactor your models using modeling layers',
-            'configuring project defaults',
+            'practice modeling layers',
+            'installing and using packages',
+            'incremental materialization',
         ],
     },
 ]
