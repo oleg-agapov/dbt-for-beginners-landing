@@ -1,7 +1,7 @@
 ---
 import Header from "../basic/Header.astro";
 import CodeExample from "../course/CodeExample.astro";
-
+import { coachingRequestForm } from "../../coachingContent";
 ---
 
 <section class="bg-yellow-300 min-h-screen1">
@@ -15,9 +15,9 @@ import CodeExample from "../course/CodeExample.astro";
           
           Learn how world-class data teams use dbt <img src="/dbt-logo.svg" class="inline-block h-4 w-4"> to build reliable, maintainable, and scalable analytics.</p>
         <div class="my-16"></div>
-        <button class="p-3 px-5 rounded bg-blue-500 hover:bg-blue-400 text-white">Enroll now</button>
+        <a href={coachingRequestForm} target="_blank" class="p-3 px-5 rounded bg-blue-500 hover:bg-blue-400 text-white">Enroll now</a>
         <span class="mx-2"></span>
-        <button class="p-3 px-5 rounded bg-yellow-200 hover:bg-yellow-100 text-yellow-600">Scroll for more</button>
+        <a href="#scroll" class="p-3 px-5 rounded bg-yellow-200 hover:bg-yellow-100 text-yellow-600">See program</a>
 
       </div>
     </div>

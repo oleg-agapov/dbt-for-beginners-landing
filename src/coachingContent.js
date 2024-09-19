@@ -71,3 +71,5 @@ export const coachingModules = [
         ],
     },
 ]
+
+export const coachingRequestForm = "https://docs.google.com/forms/d/e/1FAIpQLSd72bZDvPzwh8qAytY3LbGkpKP12aTGeJeiH5wzRSpD-0UWVg/viewform"

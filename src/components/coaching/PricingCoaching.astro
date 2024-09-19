@@ -1,0 +1,64 @@
+---
+import { coachingRequestForm } from "../../coachingContent";
+
+const pricing = [
+    {
+        title: "Standard program",
+        price: "$179",
+        perStudent: true,
+        description: "Designed to help you learn enough dbt to build your own project.",
+        includes: [
+            "3 lectures (~1.5h each)",
+            "guided homework",
+            "access to recordings",
+            "Q&A sessions",
+        ],
+    },
+    {
+        title: "Extended coaching",
+        price: "$279",
+        perStudent: true,
+        description: "Extended version that includes more lectures and use-cases.",
+        includes: [
+            "6 lectures (~1.5h each)",
+            "guided homework",
+            "access to recordings",
+            "Q&A sessions",
+        ],
+    }
+]
+
+---
+
+<div class="bg-blue-400 py-8 pb-32">
+    <section class="max-w-6xl mx-auto px-8 md:px-16">
+        
+        <div class="my-24 flex justify-center">
+            <h1 class="text-2xl md:text-3xl relative z-0">
+                <span class="absolute w-16 h-16 bg-yellow-200 -z-10 rounded-full -top-3 -left-6"></span>
+                Pricing
+            </h1>
+        </div>
+        
+        <div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:px-32">
+                {pricing.map((data, index) => 
+                    <div class="bg-white rounded-lg shadow-lg p-8 1w-96">
+                        <h3 class="text-md text-gray-800 bg-yellow-300 inline px-1 font-thin">{data.title}</h3>
+                        <h2 class="mt-4 text-4xl">{data.price}</h2>
+                        <p class="text-sm">{data.perStudent ? "/ per student" : "Fixed price"}</p>
+                        <p class="mt-4 text-sm text-gray-700">{data.description}</p>
+                        <p class="mt-8 text-sm mb-2">What's included:</p>
+                        <ul>
+                            {data.includes?.map((item) => 
+                                <li class="text-sm list-disc ml-4 text-gray-700">{item}</li>
+                            )}
+                        </ul>
+                        <a href={coachingRequestForm} target="_blank" class="inline-block mt-8 p-3 px-5 rounded bg-blue-600 hover:bg-blue-500 text-white">Enroll now</a>
+                    </div>
+                )}
+            </div>
+        </div>
+
+    </section>
+</div>
