@@ -5,7 +5,7 @@ const pricing = [
     {
         title: "Standard program",
         price: "$179",
-        perStudent: true,
+        perParticipant: true,
         description: "Designed to help you learn enough dbt to build your own project.",
         includes: [
             "3 lectures (~1.5h each)",
@@ -17,7 +17,7 @@ const pricing = [
     {
         title: "Extended coaching",
         price: "$279",
-        perStudent: true,
+        perParticipant: true,
         description: "Extended version that includes more lectures and use-cases.",
         includes: [
             "6 lectures (~1.5h each)",
@@ -46,7 +46,7 @@ const pricing = [
                     <div class="bg-white rounded-lg shadow-lg p-8 1w-96">
                         <h3 class="text-md text-gray-800 bg-yellow-300 inline px-1 font-thin">{data.title}</h3>
                         <h2 class="mt-4 text-4xl">{data.price}</h2>
-                        <p class="text-sm">{data.perStudent ? "/ per student" : "Fixed price"}</p>
+                        <p class="text-sm">{data.perParticipant ? "/ per participant" : "Fixed price"}</p>
                         <p class="mt-4 text-sm text-gray-700">{data.description}</p>
                         <p class="mt-8 text-sm mb-2">What's included:</p>
                         <ul>
