@@ -1,0 +1,55 @@
+---
+
+const questions = [
+    {
+        question: "What prior experience do I need for this course?",
+        answer: "You'll need basic knowledge of SQL (ability to write SELECT queries), familiarity with terminal/CLI commands, and basic understanding of Git/GitHub. No prior dbt experience is required."
+    },
+    {
+        question: "How much time should I allocate per week?",
+        answer: "You should expect to spend about 4-5 hours per week, including 2 one-hour live sessions and 2-3 hours for practical assignments and self-study."
+    },
+    {
+        question: "What if I miss a live session?",
+        answer: "All sessions are scheduled at times that work for you. However, if you need to miss one, recordings will be available, and you can ask questions through our chat support."
+    },
+    {
+        question: "What tools and software will I need?",
+        answer: "To complete the course, you only need a computer with internet access and a web browser, as all work can be done in GitHub Codespaces. For a better development experience, students may optionally work locally on their laptops using Git and their preferred IDE. Access to Snowflake database will be provided as part of the course."
+    },
+    {
+        question: "Is there ongoing support after the program ends?",
+        answer: "Yes, you'll have access to the course materials even after completion. You can also stay connected with fellow participants through our community channels."
+    },
+    {
+        question: "Can my company sponsor this training?",
+        answer: "Yes, many companies provide professional development for their teams. We can provide all necessary documentation for corporate training budgets."
+    },
+]
+
+---
+
+<div class="bg-gray-100 py-8 pb-16">
+    <section class="max-w-6xl mx-auto px-8">
+    
+        <div class="my-16 flex justify-center">
+            <h1 class="text-2xl md:text-3xl relative">
+                <span class="absolute w-16 h-16 bg-blue-200 -z-10 rounded-full -top-3 -left-6"></span>
+                Frequently Asked Questions
+            </h1>
+        </div>
+        
+        <div class="mx-auto w-full md:w-2/3 text-lg">
+            <ul>
+                {questions.map((data, index) => 
+                <li class="py-2 pb-8">
+                    <p class="font-bold">🔹 {data.question}</p>
+                    <p class="text-gray-600">{data.answer}</p>
+                </li>
+                )}
+            </ul>
+        </div>
+    
+    </section>
+</div>
+

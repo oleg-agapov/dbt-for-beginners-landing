@@ -1,11 +1,16 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import HeroCoaching from "../components/coaching/HeroCoaching.astro";
-import AboutCoaching from "../components/coaching/AboutCoaching.astro";
-import FromZeroCoaching from "../components/coaching/FromZeroCoaching.astro";
-import CoachingProgram from "../components/coaching/CoachingProgram.astro";
-import AboutAuthor from "../components/coaching/AboutAuthor.astro";
-import PricingCoaching from "../components/coaching/PricingCoaching.astro";
+import HeroCoaching from "../components/coaching2/HeroCoaching.astro";
+import HeroCourseDetails from "../components/coaching2/HeroCourseDetails.astro";
+import TakeYourSkills from "../components/coaching2/TakeYourSkills.astro";
+import WhatYoullAchieve from "../components/coaching2/WhatYoullAchieve.astro";
+import WhoIsProgramFor from "../components/coaching2/WhoIsProgramFor.astro";
+import CoachingProgram from "../components/coaching2/CoachingProgram.astro";
+import RequiredKnowledge from "../components/coaching2/RequiredKnowledge.astro";
+import ProgramFormat from "../components/coaching2/ProgramFormat.astro";
+import AboutAuthor from "../components/coaching2/AboutAuthor.astro";
+import PricingCoaching from "../components/coaching2/PricingCoaching.astro";
+import FAQ from "../components/coaching2/FAQ.astro";
 
 import { AstroSeo } from "@astrolib/seo";
 ---
@@ -18,10 +23,15 @@ import { AstroSeo } from "@astrolib/seo";
 
 <BaseLayout>
   <HeroCoaching />
-  <AboutCoaching />
-  <FromZeroCoaching />
+  <HeroCourseDetails />
+  <TakeYourSkills />
+  <WhatYoullAchieve />
+  <WhoIsProgramFor />
   <CoachingProgram />
+  <RequiredKnowledge />
+  <ProgramFormat />
   <AboutAuthor />
   <PricingCoaching />
+  <FAQ />
   
 </BaseLayout>

@@ -1,0 +1,47 @@
+---
+const features = [
+    {
+        title: 'SQL',
+        img: '/images/sql.png',
+        description: 'Basic knowledge of SQL, including the ability to write SELECT queries.'
+    },
+    {
+        title: 'CLI',
+        img: '/images/terminal.png',
+        description: 'Basic knowledge of bash commands and familiarity with command-line interface (CLI) tools.'
+    },
+    {
+        title: 'Git',
+        img: '/images/git.png',
+        description: 'Basic understanding of Git commands and a GitHub account.'
+    },
+]
+---
+
+<section class="max-w-6xl mx-auto px-8 md:px-16">
+    
+    <div class="my-24 flex justify-center">
+        <h1 class="text-2xl md:text-3xl relative">
+            <!-- <span class="absolute w-16 h-16 bg-blue-200 -z-10 rounded-full -top-3 -left-6"></span> -->
+            Required Knowledge 📚
+        </h1>
+    </div>
+    
+    <div class="my-16 md:mb-32">
+        <div class="flex flex-col 1items-center">
+            {features.map((data) =>
+            <div class="flex px-2 md:px-32 lg:px-64 mb-8">
+                
+                <div class="relative p-4 1bg-yellow-300 1rounded-full text-center">
+                    {/* <img src={data.img} class="h-20 w-20"> */}
+                    <h1 class="w-12 text-xl">{data.title}</h1>
+                    <div class="absolute bg-yellow-300 rounded-full -z-10 left-0 top-0 right-0 bottom-0"></div>
+                </div>
+                
+                
+                <div class="pl-8 flex-1 flex items-center">{data.description}</div>
+            </div>)}
+        </div>
+    </div>
+
+</section>
